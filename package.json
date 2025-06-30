@@ -16,7 +16,7 @@
     "test": "jest",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
-    "postinstall": "node -e \"try{require('cloudflared').install()}catch(e){console.log('Cloudflared install skipped')}\""
+    "postinstall": "echo 'Installation complete. Cloudflared will be installed on first use if needed.'"
   },
   "keywords": [
     "mcp",
@@ -30,9 +30,11 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.13.2",
     "@slack/web-api": "^7.9.3",
-    "cloudflared": "^0.7.0",
     "dotenv": "^17.0.0",
     "express": "^5.1.0"
+  },
+  "optionalDependencies": {
+    "cloudflared": "^0.7.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
