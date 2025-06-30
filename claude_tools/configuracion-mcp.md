@@ -6,23 +6,21 @@
 npm install -g git+https://github.com/GailenTech/claude-mcp-slack-feedback.git
 ```
 
-## 2. Configuración en Claude
+## 2. Configuración en Claude Code (CLI)
 
-Edita tu archivo de configuración de Claude Desktop. La ubicación depende de tu sistema:
+Edita tu archivo de configuración de Claude Code:
 
-- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+- **Ubicación**: `~/.claude/mcp_settings.json`
 
-Añade el servidor MCP a la sección `mcpServers`:
+Añade el servidor MCP a la sección `servers`:
 
 ```json
 {
-  "mcpServers": {
+  "servers": {
     "claude-mcp-slack-feedback": {
       "command": "node",
       "args": [
-        "/usr/local/lib/node_modules/claude-mcp-slack-feedback/dist/index.js"
+        "/opt/homebrew/lib/node_modules/claude-mcp-slack-feedback/dist/index.js"
       ],
       "env": {
         "SLACK_BOT_TOKEN": "xoxb-tu-token-aqui",
@@ -49,7 +47,7 @@ El bot necesita estos OAuth scopes:
 
 ## 5. Verificar la Instalación
 
-Después de configurar, reinicia Claude Desktop. Las herramientas MCP deberían aparecer:
+Después de configurar, inicia una nueva sesión de Claude Code. Las herramientas MCP deberían aparecer:
 - `mcp__claude-mcp-slack-feedback__setup_slack_config`
 - `mcp__claude-mcp-slack-feedback__ask_feedback`
 - `mcp__claude-mcp-slack-feedback__inform_slack`
@@ -60,11 +58,11 @@ Después de configurar, reinicia Claude Desktop. Las herramientas MCP deberían 
 
 ```json
 {
-  "mcpServers": {
+  "servers": {
     "claude-mcp-slack-feedback": {
       "command": "node",
       "args": [
-        "/usr/local/lib/node_modules/claude-mcp-slack-feedback/dist/index.js"
+        "/opt/homebrew/lib/node_modules/claude-mcp-slack-feedback/dist/index.js"
       ],
       "env": {
         "SLACK_BOT_TOKEN": "xoxb-TU-TOKEN-AQUI",
